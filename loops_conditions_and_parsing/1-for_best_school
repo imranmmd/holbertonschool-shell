@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# 1 to 10 best school
-for i in {1..10}; do
-  echo "Best School"
+# It prints  "Best School" 10 times
+
+for i in {1..10}
+do
+    echo "Best School"
 done
