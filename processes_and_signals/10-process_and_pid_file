@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Manage PID file
+
+PIDFILE="/var/run/myscript.pid"
+echo "$$" > "$PIDFILE"
+
+trap 'echo "Y U no love me?!";' SIGINT
+
+trap 'echo "I hate the kill command"; rm -f "$PIDFILE"; exit' SIGTERM
+
+trap 'rm -f "$PIDFILE"; exit' SIGQUIT
+
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
+
