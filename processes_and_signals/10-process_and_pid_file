@@ -2,6 +2,7 @@
 # PID
 
 echo $$ > /var/run/myscript.pid
+ln -sf /run/myscript.pid /var/run/myscript.pid
 
 trap 'echo "I hate the kill command"; rm -f /var/run/myscript.pid; exit' SIGTERM
 trap 'echo "Y U no love me?!";' SIGINT
