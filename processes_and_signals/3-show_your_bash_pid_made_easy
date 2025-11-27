@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-# Show PID
+# Show PId
 
 for pid in /proc/[0-9]*
 do
-    name=$(basename "$(readlink -f "$pid/exe")" 2>/dev/null)
+    pname=$(cat "$pid/comm" 2>/dev/null)
 
-    if echo "$name" | grep -q "bash"; then
-        echo "$(basename "$pid") $name"
+    if echo "$pname" | grep -q "bash"; then
+        echo "$(basename "$pid") $pname"
     fi
 done
